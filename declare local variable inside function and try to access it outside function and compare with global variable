@@ -1,0 +1,17 @@
+#include<stdio.h>
+int a=5,b=3;
+int product(){
+    int c,d;// declaring local vaiable
+    printf("%d\n",a*b);// accessing global variable
+    return 0;
+}
+int main()
+{   
+    int sum;
+    sum = a + b;// accessing global variable 
+    printf("%d\n",sum);
+    printf("%d\n",c*d);// trying to access local variables but showing error
+    product();
+    
+    return 0;
+}
