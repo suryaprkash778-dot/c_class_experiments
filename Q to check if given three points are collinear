@@ -1,0 +1,22 @@
+//Q to check if given three points are collinear
+
+#include<stdio.h>
+int main()
+{
+    float x1,y1,x2,y2,x3,y3;
+    
+    printf("enter coordinates of first point");
+    scanf("%f %f",&x1,&y1);
+    printf("enter coordinates of second point");
+    scanf("%f %f",&x2,&y2);
+    printf("enter coordinates of third point");
+    scanf("%f %f",&x3,&y3);
+    if((y2 - y1)*(x3 - x1)== (y3 - y1)*(x2 - x1))
+        printf("given points are collinear");
+    else
+        printf("points are not collinear");
+
+    return 0;
+
+}
+
