@@ -1,0 +1,23 @@
+
+#include<stdio.h>
+int main()
+{
+    int l1,b1,l2,b2,l3,b3,p1,p2,p3;
+    printf("What is the length and breadth of first rectangle\n");
+    scanf("%d %d",&l1,&b1);
+    printf("what is the length and breadth of second rectangle\n");
+    scanf("%d %d",&l2,&b2);
+    printf("what is the length and breadth of third rectangle\n");
+    scanf("%d %d",&l3,&b3);
+    p1 = 2*(l1 + b1);
+    p2 = 2*(l2 + b2);
+    p3 = 2*(l3 + b3);
+    printf("%s",
+    (p1>p2 && p1>p3)?"first rectangle has the highest perimeter\n":
+    (p2>p1 && p2>p3)?"second rectangle has the highest perimeter\n":
+    (p3>p1 && p3>p2)?"third rectangle has the highest perimeter\n":
+        "its a tie all rectangles have equal perimeter");
+
+    return 0;
+
+}
