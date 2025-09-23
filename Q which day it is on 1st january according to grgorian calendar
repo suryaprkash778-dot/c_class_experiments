@@ -1,0 +1,31 @@
+// which day it is on 1st january according to grgorian calendar
+
+# include <stdio.h>
+
+int main(){
+    int diff ,leap,y,total_days,day;
+    printf("enter a year\n");
+    scanf("%d",&y);
+    diff = y - 0001;
+    leap = (y/4 - y/100 + y/400) ;
+    total_days = (diff-leap)*365 + leap*366;
+    day = total_days%7;
+    
+    if(day == 0)
+        printf("its monday on 1st january\n");
+    if(day == 1)
+        printf("its tuesday on 1st january\n");
+    if(day == 2)
+        printf("its wednesday on 1st january\n");
+    if(day == 3)
+        printf("its thursday on 1st january\n");
+    if(day == 4)
+        printf("its friday on 1st january\n");
+    if(day == 5)
+        printf("its saturday on 1st january\n");
+    if(day == 6)
+        printf("its sunday on 1st january\n");
+
+
+    return 0;
+}
