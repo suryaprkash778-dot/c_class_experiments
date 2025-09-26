@@ -1,0 +1,32 @@
+#include<stdio.h>
+int fact(unsigned k){
+  if(k==0){
+    return 1;
+  }
+  else{
+    return k*fact(k-1);
+ 
+  }
+  
+}
+void main(){
+  int n;
+  printf("enter number of rows");
+  scanf("%d",&n);
+  for(int i=0;i<=(n-1);i++){
+    if(i==0){
+      printf("%d",1);
+    }else{
+        for(int k=0;k<=i;k++){
+    int nth_element = fact(i)/(fact(i-k)*fact(k));
+    printf("%d\t",nth_element);
+  }
+    }
+
+  printf("\n");
+}
+    
+}
+  
+
+   
