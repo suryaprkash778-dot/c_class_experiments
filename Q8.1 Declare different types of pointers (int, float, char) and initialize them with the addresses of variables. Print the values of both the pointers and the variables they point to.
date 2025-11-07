@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    int i = 42;
+    float f = 3.14;
+    char c = 'A';
+
+    int *iptr = &i;
+    float *fptr = &f;
+    char *cptr = &c;
+    printf("\n");
+    printf("Address stored in iptr: %p\n", iptr);
+    printf("Address stored in fptr: %p\n", fptr);
+    printf("Address stored in cptr: %p\n\n", cptr);
+
+    printf("Value pointed by iptr: %d\n", *iptr);
+    printf("Value pointed by fptr: %.2f\n", *fptr);
+    printf("Value pointed by cptr: %c\n", *cptr);
+    return 0;
+}
