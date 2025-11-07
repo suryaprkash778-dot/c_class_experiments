@@ -1,0 +1,35 @@
+#include <stdio.h>
+int main() {
+    char c_arr[] = {'A', 'B', 'C'};
+    int i_arr[] = {10, 20, 30};
+    float f_arr[] = {1.1, 2.2, 3.3};
+
+    char *c_ptr = c_arr;
+    int *i_ptr = i_arr;
+    float *f_ptr = f_arr;
+
+    printf("initial values\n");
+    printf("char*   = %p\n", c_ptr);
+    printf("int*    = %p\n", i_ptr);
+    printf("float* = %p\n\n", f_ptr);
+
+    c_ptr++;
+    i_ptr++;
+    f_ptr++;
+
+    printf("after incrementing\n");
+    printf("char*   = %p (points to '%c')\n", c_ptr, *c_ptr);
+    printf("int*    = %p (points to %d)\n", i_ptr, *i_ptr);
+    printf("float* = %p (points to %.1f)\n\n", f_ptr, *f_ptr);
+
+    c_ptr--;
+    i_ptr--;
+    f_ptr--;
+
+    printf("after decrementing\n");
+    printf("char*   = %p (points to '%c')\n", c_ptr, *c_ptr);
+    printf("int*    = %p (points to %d)\n", i_ptr, *i_ptr);
+    printf("float* = %p (points to %.1f)\n", f_ptr, *f_ptr);
+
+    return 0;
+}
