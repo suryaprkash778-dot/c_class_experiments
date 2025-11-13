@@ -1,0 +1,58 @@
+#include <stdio.h>
+typedef struct {
+    float real;
+    float imag;
+} Complex;
+//function to write a complex number
+Complex writeComplex() {
+    Complex c;
+    printf("Enter real part: ");
+    scanf("%f", &c.real);
+    printf("Enter imaginary part: ");
+    scanf("%f", &c.imag);
+    return c;
+}
+//function to format complex in a + ib form
+void formatComplex(Complex c) {
+    if (c.imag >= 0)
+        printf("%.2f + %.2fi\n", c.real, c.imag);
+    else
+        printf("%.2f - %.2fi\n", c.real, -c.imag);
+}
+// Function to add two complex numbers
+Complex addComplex(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real + b.real;
+    result.imag = a.imag + b.imag;
+    return result;
+}
+// Function to subtract two complex numbers
+Complex subtractComplex(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real - b.real;
+    result.imag = a.imag - b.imag;
+    return result;
+}
+int main() {
+printf("writing first complex number:\n");
+    Complex c1 = writeComplex();
+
+    printf("\nwriting second complex number:\n");
+    Complex c2 = writeComplex();
+
+    printf("\nFirst complex number: ");
+    formatComplex(c1);
+
+    printf("Second complex number: ");
+    formatComplex(c2);
+
+    Complex sum = addComplex(c1, c2);
+    Complex diff = subtractComplex(c1, c2);
+
+    printf("\nSum of the two complex numbers: ");
+    formatComplex(sum);
+
+    printf("Difference of the two complex numbers: ");
+    formatComplex(diff);
+    return 0;
+}
