@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main() {
+    FILE *fp;
+    char line[256]; 
+    fp = fopen("file1.txt", "r");
+    while (fgets(line, sizeof(line), fp)) {
+        printf("%s", line); 
+    }
+    fclose(fp);
+    printf("\nFile reading completed and file closed.\n");
+    return 0;
+}
