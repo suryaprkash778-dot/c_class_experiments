@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <stdlib.h>
+// Define the node structure
+struct Node {
+    int data;
+    struct Node* next;
+};
+// Function to create a new node
+struct Node* createNode(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+    return newNode;
+}
+// Function to insert a node in the middle
+void insertInMiddle(struct Node** head, int value) {
+    struct Node* newNode = createNode(value);
+    if (*head == NULL) {
+        *head = newNode;
+        return;
+    }
+    // Count the number of nodes
+    int count = 0;
+    struct Node* temp = *head;
+    while (temp != NULL) {
+        count++;
+        temp = temp->next;
+    }
+    int mid = count / 2;
+    // Traverse to the middle
+    temp = *head;
+    for (int i = 0; i < mid - 1; i++) {
+        temp = temp->next;
+    }
+    // Insert the new node
+    newNode->next = temp->next;
+    temp->next = newNode;
+}
+// Function to print the list
+void printList(struct Node* head) {
+    while (head != NULL) {
+        printf("%d -> ", head->data);
+        head = head->next;
+    }
+    printf("NULL\n");
+}
+int main() {
+    struct Node* head = createNode(1);
+    head->next = createNode(2);
+    head->next->next = createNode(4);
+    head->next->next->next = createNode(5);
+    printf("Original list:\n");
+    printList(head);
+    // Insert 3 in the middle
+    insertInMiddle(&head, 3);
+    printf("After inserting 3 in the middle:\n");
+    printList(head);
+    return 0;
+}
