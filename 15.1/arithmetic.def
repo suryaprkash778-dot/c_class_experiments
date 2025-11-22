@@ -1,0 +1,6 @@
+LIBRARY "libarithmetic"
+EXPORTS
+    add
+    subtract
+    multiply
+    divide
