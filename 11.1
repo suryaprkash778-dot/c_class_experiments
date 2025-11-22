@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() {
+    unsigned int a, b;
+    // Input two integers
+    printf("Enter first integer (a): ");
+    scanf("%u", &a);
+    printf("Enter second integer (b): ");
+    scanf("%u", &b);
+    // bitwise AND
+    unsigned int andResult = a & b;
+    // Bitwise OR
+    unsigned int orResult = a | b;
+    // Bitwise NOT (on a and b separately)
+    unsigned int notA = ~a;
+    unsigned int notB = ~b;
+    // Display results
+    printf("\nBitwise Operations:\n");
+    printf("a = %u, b = %u\n", a, b);
+    printf("a & b = %u\n", andResult);
+    printf("a | b = %u\n", orResult);
+    printf("~a = %u\n", notA);
+    printf("~b = %u\n", notB);
+    return 0;
+}
